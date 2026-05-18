@@ -412,7 +412,6 @@ function getCartItems($conn, $userId) {
     );
 
     mysqli_stmt_bind_param($stmt, 'i', $userId);
-
     mysqli_stmt_execute($stmt);
 
     $result = mysqli_stmt_get_result($stmt);
@@ -420,7 +419,6 @@ function getCartItems($conn, $userId) {
     $data = [];
 
     while ($row = mysqli_fetch_assoc($result)) {
-
         $data[] = $row;
     }
 

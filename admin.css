@@ -1,0 +1,336 @@
+/*
+PREMIUM PHARMACY ADMIN STYLESHEET
+Theme: Modern Clinical / Enterprise SaaS
+*/
+
+:root {
+  /* Sophisticated Palette */
+  --brand-primary: #059669; /* Rich Emerald */
+  --brand-secondary: #064e3b; /* Deep Forest */
+  --accent-gold: #fbbf24;
+
+  /* Surfaces & Neutrals */
+  --bg-main: #f8fafc;
+  --surface-card: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+
+  /* Text */
+  --text-rich: #0f172a;
+  --text-standard: #334155;
+  --text-muted: #64748b;
+
+  /* Design Tokens */
+  --border-subtle: rgba(226, 232, 240, 0.8);
+  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+/* --- Global Resets --- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: radial-gradient(at top left, #f8fafc, #f1f5f9);
+  color: var(--text-standard);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* --- Glassmorphic Navbar --- */
+.navbar {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar h2::before {
+  content: '✚';
+  -webkit-text-fill-color: white;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.navbar span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-right: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar a:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* --- Content Layout --- */
+.main-content {
+  max-width: 1440px;
+  margin: 3rem auto;
+  padding: 0 2.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-rich);
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.04em;
+}
+
+/* --- Elevated Cards --- */
+.card {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-premium);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-rich);
+  border-left: 4px solid var(--brand-primary);
+  padding-left: 1rem;
+}
+
+/* --- Dashboard Grid --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.dashboard-grid .card {
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 0;
+}
+
+.dashboard-grid .card:hover {
+  transform: translateY(-8px);
+}
+
+.dashboard-grid h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.dashboard-grid p {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--brand-secondary);
+  letter-spacing: -0.02em;
+}
+
+/* --- Premium Forms --- */
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+form input, form select, form textarea {
+  background: #fcfdfe;
+  border: 1px solid #e2e8f0;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-rich);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.08);
+  transform: translateY(-1px);
+}
+
+form textarea {
+  grid-column: span 2;
+  height: 120px;
+}
+
+form button {
+  grid-column: span 2;
+  background: var(--brand-secondary);
+  color: white;
+  padding: 1.1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(6, 78, 59, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form button:hover {
+  background: var(--brand-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(5, 150, 105, 0.2);
+}
+
+/* --- Data Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  background: #f8fafc;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-standard);
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:hover td {
+  background: rgba(248, 250, 252, 0.8);
+}
+
+/* Action Chips */
+.card table a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #ecfdf5;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: 4px;
+  display: inline-block;
+}
+
+.card table a:hover {
+  background: var(--brand-primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.card table a[onclick*="confirm"] {
+  background: #fff1f2;
+  color: #e11d48;
+}
+
+.card table a[onclick*="confirm"]:hover {
+  background: #e11d48;
+  color: white;
+}
+
+/* --- Responsive Handling --- */
+@media (max-width: 1024px) {
+  .main-content { padding: 0 1.5rem; }
+  form { grid-template-columns: 1fr; }
+  form textarea, form button { grid-column: span 1; }
+}
+
+@media (max-width: 640px) {
+  .navbar { padding: 1rem; }
+  .navbar span { display: none; }
+  h1 { font-size: 1.75rem; }
+  .card { padding: 1.5rem; }
+  table { display: block; overflow-x: auto; }
+}

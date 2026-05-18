@@ -697,7 +697,6 @@ function addToCartCtrl($conn) {
 }
 
 function cartCtrl($conn) {
-
     if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'customer') {
         header('Location: index.php?page=login');
         exit;
@@ -736,7 +735,6 @@ function cartCtrl($conn) {
 }
 
 function checkoutCtrl($conn) {
-
     if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'customer') {
         header('Location: index.php?page=login');
         exit;
@@ -749,7 +747,6 @@ function checkoutCtrl($conn) {
         header('Location: index.php?page=customer');
         exit;
     }
-
     $total = 0;
     foreach ($cartItems as $item) {
         $total += $item['price'] * $item['quantity'];

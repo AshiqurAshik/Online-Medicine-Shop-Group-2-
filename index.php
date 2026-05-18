@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 
 require 'config.php';
@@ -106,7 +105,6 @@ if ($page === 'ajax') {
 
 
 
-
 $publicPages = ['login', 'register'];
 
 
@@ -130,7 +128,6 @@ if (in_array($page, $publicPages) && isset($_SESSION['user'])) {
 if (!in_array($page, $publicPages) && !isset($_SESSION['user'])) {
 
     header('Location: index.php?page=login');
-
     exit;
 }
 
